@@ -116,39 +116,42 @@ def equals():
     display.delete(0, END)
     try:
         try:
-            index = first.index(".")
+            try:
+                index = first.index(".")
+            except:
+                index = second.index(".")
+            if operator == "addition":
+                result = float(second)+float(first)
+                result = round(result, 3)
+                history.write(f"{first}+{second}={result}\n")
+            elif operator == "subtraction":
+                result = float(first)-float(second)
+                result = round(result, 3)
+                history.write(f"{first}-{second}={result}\n")
+            elif operator == "multiplication":
+                result = float(second)*float(first)
+                result = round(result, 3)
+                history.write(f"{first}*{second}={result}\n")
+            elif operator == "division":
+                result = float(first)/float(second)
+                result = round(result, 3)
+                history.write(f"{first}/{second}={result}\n")
         except:
-            index = second.index(".")
-        if operator == "addition":
-            result = float(second)+float(first)
-            result = round(result, 3)
-            history.write(f"{first}+{second}={result}\n")
-        elif operator == "subtraction":
-            result = float(first)-float(second)
-            result = round(result, 3)
-            history.write(f"{first}-{second}={result}\n")
-        elif operator == "multiplication":
-            result = float(second)*float(first)
-            result = round(result, 3)
-            history.write(f"{first}*{second}={result}\n")
-        elif operator == "division":
-            result = float(first)/float(second)
-            result = round(result, 3)
-            history.write(f"{first}/{second}={result}\n")
+            if operator == "addition":
+                result = int(second)+int(first)
+                history.write(f"{first}+{second}={result}\n")
+            elif operator == "subtraction":
+                result = int(first)-int(second)
+                history.write(f"{first}-{second}={result}\n")
+            elif operator == "multiplication":
+                result = int(second)*int(first)
+                history.write(f"{first}*{second}={result}\n")
+            elif operator == "division":
+                result = int(first)/int(second)
+                history.write(f"{first}/{second}={result}\n")
+        display.insert(0, result)
     except:
-        if operator == "addition":
-            result = int(second)+int(first)
-            history.write(f"{first}+{second}={result}\n")
-        elif operator == "subtraction":
-            result = int(first)-int(second)
-            history.write(f"{first}-{second}={result}\n")
-        elif operator == "multiplication":
-            result = int(second)*int(first)
-            history.write(f"{first}*{second}={result}\n")
-        elif operator == "division":
-            result = int(first)/int(second)
-            history.write(f"{first}/{second}={result}\n")
-    display.insert(0, result)
+        pass
 
 
 def backspace():
