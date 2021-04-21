@@ -4,6 +4,8 @@ import time
 # Main Window
 window = Tk()
 window.title("Calculator")
+window.geometry("370x500")
+window.configure(bg="black")
 
 image_1 = PhotoImage(file="buttons/1.png")
 image_2 = PhotoImage(file="buttons/2.png")
@@ -18,7 +20,7 @@ image_0 = PhotoImage(file="buttons/0.png")
 
 image_AC = PhotoImage(file="buttons/AC.png")
 image_sign = PhotoImage(file="buttons/+-.png")
-image_back = PhotoImage(file="buttons/percent.png")
+image_back = PhotoImage(file="buttons/back.png")
 image_divide = PhotoImage(file="buttons/divide.png")
 image_multipy = PhotoImage(file="buttons/multiply.png")
 image_minus = PhotoImage(file="buttons/minus.png")
@@ -26,8 +28,9 @@ image_add = PhotoImage(file="buttons/plus.png")
 image_equals = PhotoImage(file="buttons/equals.png")
 image_dot = PhotoImage(file="buttons/dot.png")
 # Display Tab
-display = Entry(window, width="28", borderwidth=0)
-display.grid(row=1, column=0, ipadx=30, ipady=10)
+display = Entry(window, bg="black", foreground="white", width=10,
+                font="calibri 50", borderwidth=0)
+display.grid(row=1, column=0)
 
 # creating a frame for all the number, and oberations button
 numpad = Frame(window, bg="black")
@@ -161,44 +164,45 @@ def clear_all():
 
 
 # buttons form 0 to 9
-button_one = Button(numpad, image=image_1, borderwidth=0, bg="black",
+button_one = Button(numpad, image=image_1, borderwidth=0, bg="black", activebackground="black", height=80,
                     command=lambda: button_click(1))
-button_two = Button(numpad, image=image_2, borderwidth=0, bg="black",
+button_two = Button(numpad, image=image_2, borderwidth=0, bg="black", activebackground="black", height=80,
                     command=lambda: button_click(2))
-button_thr = Button(numpad, image=image_3,  borderwidth=0, bg="black",
+button_thr = Button(numpad, image=image_3,  borderwidth=0, bg="black", activebackground="black", height=80,
                     command=lambda: button_click(3))
-button_fou = Button(numpad, image=image_4, borderwidth=0, bg="black",
+button_fou = Button(numpad, image=image_4, borderwidth=0, bg="black", activebackground="black", height=80,
                     command=lambda: button_click(4))
-button_fiv = Button(numpad, image=image_5, borderwidth=0, bg="black",
+button_fiv = Button(numpad, image=image_5, borderwidth=0, bg="black", activebackground="black", height=80,
                     command=lambda: button_click(5))
-button_six = Button(numpad, image=image_6, borderwidth=0, bg="black",
+button_six = Button(numpad, image=image_6, borderwidth=0, bg="black", activebackground="black", height=80,
                     command=lambda: button_click(6))
-button_sev = Button(numpad, image=image_7, borderwidth=0, bg="black",
+button_sev = Button(numpad, image=image_7, borderwidth=0, bg="black", activebackground="black", height=80,
                     command=lambda: button_click(7))
-button_eig = Button(numpad, image=image_8, borderwidth=0, bg="black",
+button_eig = Button(numpad, image=image_8, borderwidth=0, bg="black", activebackground="black", height=80,
                     command=lambda: button_click(8))
-button_nin = Button(numpad, image=image_9, borderwidth=0, bg="black",
+button_nin = Button(numpad, image=image_9, borderwidth=0, bg="black", activebackground="black", height=80,
                     command=lambda: button_click(9))
-button_zer = Button(numpad, image=image_0, borderwidth=0, bg="black",
+button_zer = Button(numpad, image=image_0, borderwidth=0, bg="black", activebackground="black", height=80,
                     command=lambda: button_click(0))
 
 # Operation buttons
-plus = Button(numpad, image=image_add, borderwidth=0, bg="black", command=plus)
-minus = Button(numpad, image=image_minus,
+plus = Button(numpad, image=image_add, borderwidth=0,
+              bg="black", activebackground="black", height=80, command=plus)
+minus = Button(numpad, image=image_minus, activebackground="black", height=80,
                borderwidth=0, bg="black", command=minus)
-multiply = Button(numpad, image=image_multipy, borderwidth=0,
+multiply = Button(numpad, image=image_multipy, borderwidth=0, activebackground="black", height=80,
                   bg="black", command=multiply)
-divide = Button(numpad, image=image_divide,
+divide = Button(numpad, image=image_divide, activebackground="black", height=80,
                 borderwidth=0, bg="black", command=divide)
-equals = Button(numpad, image=image_equals,
+equals = Button(numpad, image=image_equals, activebackground="black", height=80,
                 borderwidth=0, bg="black", command=equals)
-button_dot = Button(numpad, image=image_dot, borderwidth=0, bg="black",
+button_dot = Button(numpad, image=image_dot, borderwidth=0, bg="black", activebackground="black", height=80,
                     command=lambda: button_click(11))
-button_sig = Button(numpad, image=image_sign, borderwidth=0, bg="black",
+button_sig = Button(numpad, image=image_sign, borderwidth=0, bg="black", activebackground="black", height=80,
                     command=invert)
-button_bac = Button(numpad, image=image_back, borderwidth=0, bg="black",
+button_bac = Button(numpad, image=image_back, borderwidth=0, bg="black", width=100, activebackground="black", height=80,
                     command=backspace)
-button_Alc = Button(numpad, image=image_AC, borderwidth=0, bg="black",
+button_Alc = Button(numpad, image=image_AC, borderwidth=0, bg="black", width=100, activebackground="black", height=80,
                     command=clear_all)
 
 # packing buttons in screen
