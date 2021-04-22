@@ -15,6 +15,9 @@ this is the interface i designed
 note: If u r using images as styling option in tkinted, dimensons should be precise. that is why i first created this plan ; then downloaded all the buttons individually and used them.
 
 ## Areas of improvement:
-- scientific calculator not present 
+- scientific calculations not possible![final](https://user-images.githubusercontent.com/82703629/115661271-d02e2000-a35a-11eb-80cd-709a0dea01c8.jpg)
+ 
 - history of calculations collected,but no interface build to show that
 - No logo
+
+## Final look:
